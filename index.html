@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kallath's Food | Authentic Spices from Pilathara, Kannur</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#C8E194;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-image: url('spices-background.jpg'); /* Add an attractive background image of spices */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color:purple ;
+            padding: 60px 0;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        header a {
+            background-color: #ff4500;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        header a:hover {
+            background-color: #d13d00;
+        }
+
+        /* Navigation styling */
+        nav {
+            background-color: #ff7f50;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content styling */
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #ff4500;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .section-content {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 60px;
+        }
+
+        .section-content img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        .section-content div {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .section-content h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .section-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Products list */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-item {
+            background-color: #ffe4c4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item img {
+            width: 100%;
+            max-width: 150px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        .product-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .product-item p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #ff4500;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .section-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-content div {
+                max-width: 100%;
+            }
+
+            .products {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Kallath's Food</h1>
+        <p>Authentic Spices from Pilathara, Kanpur</p>
+        <a href="#products">Shop Now</a>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Our Spices</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <!-- About Us Section -->
+    <div class="container" id="about">
+        <h2 class="section-title">About Kallath's Food</h2>
+        <div class="section-content">
+            <img src="shop.jpg" alt="Kallath's Food Shop">
+            <div>
+                <h2>Our Story</h2>
+                <p>Kallath's Food, based in Pilathara, Kanpur, brings you the finest, authentic spices straight from our fields. With years of experience in spice blending, we take pride in offering high-quality products that enhance the flavors of your favorite dishes.</p>
+                <p>Our special items include traditional sambar and rasam powders, chutney powders, and a variety of other spices that will make your meals unforgettable.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Spices Section -->
+    <div class="container" id="products">
+        <h2 class="section-title">Our Spices</h2>
+        <div class="products">
+            <div class="product-item">
+                <img src="sambar-powder.jpg" alt="Sambar Powder">
+                <h3>Sambar Powder</h3>
+                <p>A traditional South Indian blend for perfect sambar.</p>
+            </div>
+            <div class="product-item">
+                <img src="rasam-powder.jpg" alt="Rasam Powder">
+                <h3>Rasam Powder</h3>
+                <p>The secret ingredient to a tangy and spicy rasam.</p>
+            </div>
+            <div class="product-item">
+                <img src="chutney-powder.jpg" alt="Chutney Powder">
+                <h3>Chutney Powder</h3>
+                <p>Enhance your breakfast with this flavorful chutney powder.</p>
+            </div>
+            <div class="product-item">
+                <img src="garam-masala.jpg" alt="Garam Masala">
+                <h3>Garam Masala</h3>
+                <p>Aromatic garam masala to spice up your curries.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Kallath's Food. All Rights Reserved | Pilathara, Kanpur</p>
+    </footer>
+
+</body>
+</html>
+
