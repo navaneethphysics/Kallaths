@@ -9,17 +9,17 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color:#C8E194;
+            background-color: #C8E194;
             color: #333;
         }
 
         /* Header styling */
         header {
-            background-image: url('spices-background.jpg'); /* Add an attractive background image of spices */
+            background-image: url('spices-background.jpg');
             background-size: cover;
             background-position: center;
             text-align: center;
-            color:purple ;
+            color: purple;
             padding: 50px 0;
         }
 
@@ -74,27 +74,25 @@
             text-align: center;
         }
 
-       
-.contact {
-    background-color: #C8E194;
-    color: #ff4500;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center; /* This centers all text inside the contact section */
-    margin: 20px 0;
-}
+        .contact {
+            background-color: #C8E194;
+            color: #ff4500;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
 
-.contact p {
-    text-align: center; /* Ensure all paragraphs inside .contact are centered */
-    color: black;
-    margin: 10px 0;
-}
+        .contact p {
+            text-align: center;
+            color: black;
+            margin: 10px 0;
+        }
 
-.contact a {
+        .contact a {
             color: #d44f24;
             text-decoration: none;
         }
-
 
         .section-title {
             font-size: 2em;
@@ -145,6 +143,7 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .product-item img {
@@ -163,10 +162,66 @@
             font-size: 1em;
             margin-bottom: 10px;
         }
-        /* Footer styling */
-        
 
-      footer {
+        .buy-button {
+            display: none; /* Hide by default */
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #d13d00;
+        }
+
+        /* Modal styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Footer styling */
+        footer {
             background-color: #ff4500;
             color: white;
             text-align: center;
@@ -197,6 +252,21 @@
             }
         }
     </style>
+    <script>
+        function showBuyButton(button) {
+            const buttons = document.querySelectorAll('.buy-button');
+            buttons.forEach(btn => btn.style.display = 'none'); // Hide all buttons
+            button.style.display = 'block'; // Show the clicked button
+        }
+
+        function showModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
 </head>
 <body>
 
@@ -231,42 +301,122 @@
     <div class="container" id="products">
         <h2 class="section-title">Our Spices</h2>
         <div class="products">
-            <div class="product-item">
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
                 <img src="sambar.jpeg" alt="Sambar Powder">
                 <h3>Sambar Powder</h3>
                 <p>A traditional South Indian blend for perfect sambar.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
             </div>
-            <div class="product-item">
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
                 <img src="rasam.jpeg" alt="Rasam Powder">
                 <h3>Rasam Powder</h3>
                 <p>The secret ingredient to a tangy and spicy rasam.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
             </div>
-            <div class="product-item">
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
                 <img src="chutney.jpeg" alt="Chutney Powder">
                 <h3>Chutney Powder</h3>
                 <p>Enhance your breakfast with this flavorful chutney powder.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
             </div>
-            <div class="product-item">
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
                 <img src="garam.jpg" alt="Garam Masala">
                 <h3>Garam Masala</h3>
                 <p>Aromatic garam masala to spice up your curries.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
             </div>
-          <div class="product-item">
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
                 <img src="millet.jpg" alt="Millet Puttu Powder">
                 <h3>Millet Puttu Powder</h3>
                 <p>Absolutely no wheat and rice</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="kurukk_2.jpeg" alt="Nutrition Powder">
+                <h3>Nutrition Powder</h3>
+                <p>Authorized by Kerala Agricultural University, our nutritious recipe contains no preservatives or added sugar – pure bliss for your child.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="wheat.png" alt="Wheat Flour">
+                <h3>Wheat Flour</h3>
+                <p>100% Natural Wheat Flour – No Maida, Only Pure Nutrition in Every Grain!</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="cor.png" alt="Coriander Powder">
+                <h3>Coriander Powder</h3>
+                <p>Fresh, aromatic coriander powder for your daily cooking needs.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="kash.png" alt="Kashmiri Chilli">
+                <h3>Kashmiri Chilli</h3>
+                <p>Mild, flavorful, and vibrant Kashmiri chili powder for color and taste.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="chicken.png" alt="Chicken Masala">
+                <h3>Chicken Masala</h3>
+                <p>Elevate your chicken curry with the bold and aromatic flavors of our Chicken Masala blend.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="red.png" alt="Red Chilli Powder">
+                <h3>Red Chilli Powder</h3>
+                <p>Fiery and flavorful pure Red Chili Powder—washed, dried, and free from additives.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="turmeric.png" alt="Turmeric Powder">
+                <h3>Turmeric Powder</h3>
+                <p>Add a golden touch to your dishes with our pure Turmeric Powder.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="appam.png" alt="Idli, Appam Powder">
+                <h3>Idli, Appam Powder</h3>
+                <p>Create fluffy, soft idlis and appams with our special Idli Appam Powder blend.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="rasam.png" alt="Rasam Powder">
+                <h3>Rasam Powder</h3>
+                <p>Authentic taste of tradition to your table with our homemade Special Rasam Mix—fresh, flavorful, and made with love.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="puttu.png" alt="Regular Puttu Powder">
+                <h3>Regular Puttu Powder</h3>
+                <p>Puttu Powder—freshly ground and 100% natural.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
+            </div>
+            <div class="product-item" onclick="showBuyButton(this.querySelector('.buy-button'))">
+                <img src="idi.png" alt="Idiyappam Powder">
+                <h3>Idiyappam Powder</h3>
+                <p>Prepare perfectly soft and delicate string hoppers with our Idiyappam Powder—fresh, natural, and easy to use.</p>
+                <button class="buy-button" onclick="showModal(); event.stopPropagation();">Buy</button>
             </div>
         </div>
     </div>
 
-   <div class="contact" id="contact">
-         <h2>Contact Us</h2>
-              <p><strong>Address:</strong> 37H6+FF3, Pilathara, Kerala 670504</p>
-              <p><strong>Hours:</strong> Open 9AM - Closes 7PM</p>
-              <p><strong>Phone:</strong> <a href="tel:09207357134">092073 57134</a></p>
+    <div class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Address:</strong> Aasirvad Complex, Pilathara, Kerala 670504</p>
+        <p><strong>Hours:</strong> Open 9AM - Closes 7PM</p>
+        <p><strong>Phone:</strong> <a href="tel:+919207357134">+9192073 57134</a></p>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Please reach out to us via phone, Whatsapp or visit our store!</p>
+            <p><strong>Phone/Whatsapp:</strong> <a href="tel:+919207357134">+9192073 57134</a></p>
+            <p><strong>Address:</strong> Aasirvad Complex, Pilathara, Kerala 670504</p>
         </div>
-        
-        <div class="footer">
+    </div>
 
     <!-- Footer Section -->
     <footer>
